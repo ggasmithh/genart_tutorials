@@ -1,5 +1,5 @@
 [package]
-name = "rust"
+name = "rust_tiled-lines"
 version = "0.1.0"
 authors = ["Garrett Smith <ggasmithh@users.noreply.github.com>"]
 edition = "2018"
