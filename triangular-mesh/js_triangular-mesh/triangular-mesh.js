@@ -1,10 +1,11 @@
 var canvas = document.querySelector('canvas');
 var context = canvas.getContext('2d');
+var mirror = document.getElementById('mirror');
 
 var size = 900;
 var dpr = window.devicePixelRatio;
-canvas.width = size * dpr;
-canvas.height = size * dpr;
+canvas.width = mirror.width = size * dpr;
+canvas.height = mirror.width = size * dpr;
 context.scale(dpr, dpr);
 context.lineJoin = 'bevel';
 
@@ -57,3 +58,8 @@ for (var y = 0; y < lines.length - 1; y++) {
 		drawTriangle(dotLine[i], dotLine[i + 1], dotLine[i + 2]);
 	}
 }
+
+mirror.addEventListener('contextmenu', function (e) {
+    var dataURL = canvas.toDataURL('image/png');
+    mirror.src = dataURL;
+});

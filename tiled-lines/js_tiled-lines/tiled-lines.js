@@ -1,12 +1,13 @@
 var canvas = document.querySelector('canvas');
 var context = canvas.getContext('2d');
+var mirror = document.getElementById('mirror');
 
 //var size = wind;
 var size = 500;
 var step = 20;
 var dpr = window.devicePixelRatio;
-canvas.width = size * dpr;
-canvas.height = size * dpr;
+canvas.width = mirror.width = size * dpr;
+canvas.height = mirror.width = size * dpr;
 context.scale(dpr, dpr);
 
 context.lineCap = 'square';
@@ -32,5 +33,7 @@ for (var x = 0; x < size; x += step) {
 	}
 }
 
-
-
+mirror.addEventListener('contextmenu', function (e) {
+    var dataURL = canvas.toDataURL('image/png');
+    mirror.src = dataURL;
+});

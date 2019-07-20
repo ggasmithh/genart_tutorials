@@ -1,10 +1,11 @@
 var canvas = document.querySelector('canvas');
 var context = canvas.getContext('2d');
+var mirror = document.getElementById('mirror');
 
 var size = 1000;
 var dpr = window.devicePixelRatio;
-canvas.width = size * dpr;
-canvas.height = size * dpr;
+canvas.width = mirror.width = size * dpr;
+canvas.height = mirror.width = size * dpr;
 context.scale(dpr, dpr);
 
 context.lineWidth = 2;
@@ -51,3 +52,8 @@ for (var i = Math.floor(size * (1/64)); i < lines.length; i++) {
 	context.restore();
 	context.stroke();
 }
+
+mirror.addEventListener('contextmenu', function (e) {
+    var dataURL = canvas.toDataURL('image/png');
+    mirror.src = dataURL;
+});
