@@ -1,0 +1,13 @@
+.canvas-container {
+    position: relative;
+    width: 100%;
+  }
+  .canvas-canvas {
+    position: relative;
+    z-index: 1;
+  }
+  .canvas-mirror {
+    left: 0;
+    position: absolute;
+    top: 0;
+  }
