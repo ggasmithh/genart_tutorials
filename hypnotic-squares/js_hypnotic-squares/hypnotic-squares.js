@@ -21,6 +21,13 @@ var directions = [-1, 0, 1];
 function draw(x, y, width, height, xMovement, yMovement, steps) {
     context.beginPath();
     context.rect(x, y, width, height);
+
+    context.fillStyle = "hsl(" + 360 * Math.random() + ',' +
+		(70 + 70 * Math.random()) + '%,' + 
+		(60 + 10 * Math.random()) + '%)';
+
+	context.fill();
+
     context.stroke();
 
     if (steps >= 0) {
