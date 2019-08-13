@@ -1,3 +1,4 @@
+![genart_tutorials](https://github.com/ggasmithh/genart_tutorials/blob/master/genart_tutorials_social.png)
 # what?
 This is a short series of solutions of a generative art tutorial (linked below).
 I implement them in the language suggested by the tutorial, and then (sometimes)
