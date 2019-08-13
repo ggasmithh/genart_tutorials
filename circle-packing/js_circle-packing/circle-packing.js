@@ -20,7 +20,6 @@ var createCircleAttempts = 500;
 function createAndDrawCircle() {
 
     var newCircle;
-    var circleSafeToDraw = false;
 
     for (var tries = 0; tries < createCircleAttempts; tries++) {
         var newCircle = {
@@ -32,13 +31,9 @@ function createAndDrawCircle() {
         if (doesCircleHaveACollision(newCircle)) {
             continue;
         } else {
-            circleSafeToDraw = true;
             break;
         }
 
-        if (!circleSafeToDraw) {
-            return;
-        }
     }
 
     for (var radiusSize = minRadius; radiusSize < maxRadius; radiusSize++) {
